@@ -1,7 +1,10 @@
 import express from 'express';
 import Product from '../models/product.js';
+import { protect, adminOnly } from '../middleware/authMiddleware.js';
 
 const router = express.Router();
+
+// ─── PUBLIC ROUTES ────────────────────────────────────────────────────────────
 
 // GET all products
 router.get('/', async (req, res) => {
@@ -24,8 +27,12 @@ router.get('/:id', async (req, res) => {
   }
 });
 
+// ─── ADMIN ONLY ROUTES ────────────────────────────────────────────────────────
+// protect  → JWT token check karta hai
+// adminOnly → role === 'admin' check karta hai
+
 // CREATE new product
-router.post('/', async (req, res) => {
+router.post('/', protect, adminOnly, async (req, res) => {
   const product = new Product({
     name: req.body.name,
     price: req.body.price,
@@ -44,7 +51,7 @@ router.post('/', async (req, res) => {
 });
 
 // UPDATE product
-router.put('/:id', async (req, res) => {
+router.put('/:id', protect, adminOnly, async (req, res) => {
   try {
     const product = await Product.findById(req.params.id);
     if (!product) return res.status(404).json({ message: 'Product not found' });
@@ -64,7 +71,7 @@ router.put('/:id', async (req, res) => {
 });
 
 // DELETE product
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', protect, adminOnly, async (req, res) => {
   try {
     const product = await Product.findById(req.params.id);
     if (!product) return res.status(404).json({ message: 'Product not found' });
