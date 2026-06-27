@@ -10,7 +10,7 @@ const seedProducts = async () => {
   try {
     console.log('3. Connecting to MongoDB...');
     await mongoose.connect(process.env.MONGO_URI);
-    console.log('4. MongoDB Connected ✅');
+    console.log('4. Mongo data bse connected');
 
     await Product.deleteMany({});
     console.log('5. Old products cleared');
@@ -27,7 +27,7 @@ const seedProducts = async () => {
     ];
 
     const inserted = await Product.insertMany(sampleProducts);
-    console.log(`6. ✅ ${inserted.length} products added!`);
+    console.log(`6. ${inserted.length} products added!`);
 
     await mongoose.connection.close();
     console.log('7. Done!');

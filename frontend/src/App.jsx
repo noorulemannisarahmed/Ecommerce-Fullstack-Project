@@ -13,7 +13,6 @@ import Register from './pages/Register';
 import AdminPanel from './pages/AdminPanel';
 import Profile from './pages/Profile';
 
-// ── Protected Route ───────────────────────────────────────────
 const ProtectedRoute = ({ children }) => {
   const { user } = useAuth();
   if (!user) return <Navigate to="/login" replace />;

@@ -58,7 +58,7 @@ const mockOrders = [
 
 const statusConfig = {
   Delivered:  { color: "text-green-600",  bg: "bg-green-50",  border: "border-green-200",  Icon: CheckCircle },
-  Shipped:    { color: "text-blue-600",   bg: "bg-blue-50",   border: "border-blue-200",   Icon: Truck },
+  Shipped:    { color: "text-indigo-600",   bg: "bg-indigo-50",   border: "border-indigo-200",   Icon: Truck },
   Pending:    { color: "text-orange-500", bg: "bg-orange-50", border: "border-orange-200", Icon: Clock },
   Cancelled:  { color: "text-red-500",    bg: "bg-red-50",    border: "border-red-200",    Icon: XCircle },
 };
@@ -86,22 +86,22 @@ export default function Profile() {
     : mockOrders.filter((o) => o.status === filterStatus);
 
   return (
-    <div className="min-h-screen bg-gray-100 px-4 py-6 font-sans">
+    <div className="min-h-screen bg-slate-50 px-4 py-6 font-sans">
       <div className="max-w-5xl mx-auto flex flex-col lg:flex-row gap-5 items-start">
 
         {/* ── SIDEBAR ── */}
         <div className="w-full lg:w-64 flex-shrink-0">
 
           {/* User card */}
-          <div className="bg-white rounded-xl p-5 shadow-sm mb-3 flex items-center gap-3">
-            <div className="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
+          <div className="bg-white rounded-2xl p-5 shadow-md mb-3 flex items-center gap-3">
+            <div className="w-12 h-12 rounded-full bg-indigo-600 flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
               {user?.name?.charAt(0).toUpperCase()}
             </div>
             <div className="min-w-0">
               <p className="font-semibold text-gray-800 truncate">{user?.name}</p>
               <p className="text-xs text-gray-400 truncate">{user?.email}</p>
               {user?.role === "admin" && (
-                <span className="text-[10px] bg-blue-100 text-blue-600 font-bold px-2 py-0.5 rounded-full">
+                <span className="text-[10px] bg-indigo-100 text-indigo-600 font-bold px-2 py-0.5 rounded-full">
                   ADMIN
                 </span>
               )}
@@ -109,19 +109,19 @@ export default function Profile() {
           </div>
 
           {/* Nav */}
-          <div className="bg-white rounded-xl shadow-sm overflow-hidden">
+          <div className="bg-white rounded-2xl shadow-md overflow-hidden">
             {navItems.map(({ key, label, Icon }) => (
               <button
                 key={key}
                 onClick={() => setActiveTab(key)}
                 className={`w-full flex items-center justify-between px-4 py-3.5 text-sm transition-all border-b border-gray-50 last:border-0 ${
                   activeTab === key
-                    ? "bg-blue-50 text-blue-600 font-semibold"
+                    ? "bg-indigo-50 text-indigo-700 font-bold"
                     : "text-gray-600 hover:bg-gray-50"
                 }`}
               >
                 <div className="flex items-center gap-3">
-                  <Icon size={16} className={activeTab === key ? "text-blue-600" : "text-gray-400"} />
+                  <Icon size={16} className={activeTab === key ? "text-indigo-600" : "text-gray-400"} />
                   {label}
                 </div>
                 <ChevronRight size={14} className="text-gray-300" />
@@ -147,7 +147,8 @@ export default function Profile() {
             <div className="flex flex-col gap-4">
               <div className="flex items-center justify-between flex-wrap gap-2">
                 <h2 className="text-base font-bold text-gray-800 flex items-center gap-2">
-                  <ShoppingBag size={18} className="text-blue-600" />
+                  <ShoppingBag size={18} className="text-indigo-600" />
+
                   My Orders
                 </h2>
                 {/* Filter */}
@@ -158,8 +159,8 @@ export default function Profile() {
                       onClick={() => setFilterStatus(s)}
                       className={`px-3 py-1 rounded-full text-xs font-semibold transition-all ${
                         filterStatus === s
-                          ? "bg-blue-600 text-white"
-                          : "bg-white text-gray-500 border border-gray-200 hover:border-blue-300"
+                          ? "bg-indigo-600 text-white"
+                          : "bg-white text-gray-500 border border-gray-200 hover:border-indigo-300"
                       }`}
                     >
                       {s}
@@ -176,7 +177,7 @@ export default function Profile() {
                 filteredOrders.map((order) => {
                   const { color, bg, border, Icon: StatusIcon } = statusConfig[order.status];
                   return (
-                    <div key={order.id} className="bg-white rounded-xl shadow-sm overflow-hidden">
+                    <div key={order.id} className="bg-white rounded-2xl shadow-md overflow-hidden">
                       {/* Order header */}
                       <div className="flex items-center justify-between px-5 py-3 border-b border-gray-100 flex-wrap gap-2">
                         <div className="flex items-center gap-3">
@@ -214,7 +215,7 @@ export default function Profile() {
                         <span className="text-xs text-gray-500">
                           Total: <span className="font-bold text-gray-800">Rs. {order.total.toLocaleString()}</span>
                         </span>
-                        <button className="text-xs text-blue-600 font-semibold hover:underline">
+                        <button className="text-xs text-indigo-600 font-semibold hover:underline">
                           View Details
                         </button>
                       </div>
@@ -227,9 +228,10 @@ export default function Profile() {
 
           {/* ── PERSONAL INFO TAB ── */}
           {activeTab === "profile" && (
-            <div className="bg-white rounded-xl shadow-sm p-6">
+            <div className="bg-white rounded-2xl shadow-md p-6">
               <h2 className="text-base font-bold text-gray-800 mb-5 flex items-center gap-2">
-                <User size={18} className="text-blue-600" />
+                <User size={18} className="text-indigo-600" />
+
                 Personal Information
               </h2>
               <div className="flex flex-col gap-4 max-w-md">
@@ -243,11 +245,11 @@ export default function Profile() {
                     <input
                       defaultValue={value}
                       placeholder={placeholder}
-                      className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm outline-none focus:border-blue-400 transition-all"
+                      className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm outline-none focus:border-indigo-400 transition-all"
                     />
                   </div>
                 ))}
-                <button className="w-full py-2.5 bg-blue-600 text-white rounded-lg text-sm font-semibold hover:bg-blue-700 transition-all mt-2">
+                <button className="w-full py-2.5 bg-indigo-600 text-white rounded-xl text-sm font-semibold hover:bg-indigo-700 transition-all mt-2">
                   Save Changes
                 </button>
               </div>
@@ -256,15 +258,16 @@ export default function Profile() {
 
           {/* ── ADDRESS TAB ── */}
           {activeTab === "address" && (
-            <div className="bg-white rounded-xl shadow-sm p-6">
+            <div className="bg-white rounded-2xl shadow-md p-6">
               <h2 className="text-base font-bold text-gray-800 mb-5 flex items-center gap-2">
-                <MapPin size={18} className="text-blue-600" />
+                <MapPin size={18} className="text-indigo-600" />
+
                 Manage Address
               </h2>
               <div className="border-2 border-dashed border-gray-200 rounded-xl p-6 text-center">
                 <MapPin size={32} className="mx-auto text-gray-300 mb-2" />
                 <p className="text-sm text-gray-400 mb-3">No saved addresses yet</p>
-                <button className="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-semibold hover:bg-blue-700 transition-all">
+                <button className="px-4 py-2 bg-indigo-600 text-white rounded-xl text-sm font-semibold hover:bg-indigo-700 transition-all">
                   + Add New Address
                 </button>
               </div>
@@ -273,15 +276,16 @@ export default function Profile() {
 
           {/* ── PAYMENT TAB ── */}
           {activeTab === "payment" && (
-            <div className="bg-white rounded-xl shadow-sm p-6">
+            <div className="bg-white rounded-2xl shadow-md p-6">
               <h2 className="text-base font-bold text-gray-800 mb-5 flex items-center gap-2">
-                <CreditCard size={18} className="text-blue-600" />
+                <CreditCard size={18} className="text-indigo-600" />
+
                 Payment Method
               </h2>
               <div className="border-2 border-dashed border-gray-200 rounded-xl p-6 text-center">
                 <CreditCard size={32} className="mx-auto text-gray-300 mb-2" />
                 <p className="text-sm text-gray-400 mb-3">No saved payment methods</p>
-                <button className="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-semibold hover:bg-blue-700 transition-all">
+                <button className="px-4 py-2 bg-indigo-600 text-white rounded-xl text-sm font-semibold hover:bg-indigo-700 transition-all">
                   + Add Payment Method
                 </button>
               </div>

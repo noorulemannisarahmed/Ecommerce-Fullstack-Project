@@ -43,7 +43,7 @@ export default function Cart() {
 
   if (cart.length === 0) {
     return (
-      <div className="min-h-screen bg-gray-100 px-4 py-6 font-sans">
+      <div className="min-h-screen bg-slate-50 px-4 py-8 font-sans">
         <div className="max-w-5xl mx-auto">
           <div className="text-center py-12">
             <ShoppingCart size={48} className="mx-auto text-gray-400 mb-4" />
@@ -51,7 +51,7 @@ export default function Cart() {
             <p className="text-gray-600 mb-6">Add some products to get started!</p>
             <button 
               onClick={() => navigate('/products')}
-              className="px-6 py-3 bg-blue-500 text-white rounded-lg font-semibold hover:bg-blue-600"
+              className="px-6 py-3 bg-indigo-500 text-white rounded-lg font-semibold hover:bg-indigo-600"
             >
               Continue Shopping
             </button>
@@ -62,7 +62,7 @@ export default function Cart() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-100 px-4 py-6 font-sans">
+    <div className="min-h-screen bg-slate-50 px-4 py-8 font-sans">
       <div className="max-w-5xl mx-auto flex flex-col gap-6">
 
         {/* Title */}
@@ -77,7 +77,7 @@ export default function Cart() {
           <div className="flex flex-col gap-3 flex-1">
 
             {cart.map((item) => (
-              <div key={item._id} className="flex gap-4 bg-white rounded-xl p-4 shadow-sm items-start">
+              <div key={item._id} className="flex gap-4 bg-white rounded-2xl p-4 shadow-md items-start">
                 <img
                   src={item.image}
                   alt={item.name}
@@ -99,7 +99,7 @@ export default function Cart() {
                       <Trash2 size={14} />
                       Remove
                     </button>
-                    <button className="text-sm px-3 py-1 rounded-md border border-gray-200 text-blue-500 hover:bg-blue-50 hover:border-blue-300 flex items-center gap-1 transition-all">
+                    <button className="text-sm px-3 py-1 rounded-md border border-gray-200 text-indigo-500 hover:bg-indigo-50 hover:border-indigo-300 flex items-center gap-1 transition-all">
                       <Heart size={14} />
                       Save for later
                     </button>
@@ -127,7 +127,7 @@ export default function Cart() {
             <div className="flex justify-between items-center bg-white rounded-xl px-4 py-3 shadow-sm">
               <button 
                 onClick={() => navigate('/')}
-                className="flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-all"
+                className="flex items-center gap-2 bg-indigo-500 hover:bg-indigo-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-all"
               >
                 ← Back to shop
               </button>
@@ -137,10 +137,10 @@ export default function Cart() {
             </div>
 
             {/* Trust Badges */}
-            <div className="flex flex-col sm:flex-row gap-4 bg-white rounded-xl p-5 shadow-sm">
+            <div className="flex flex-col sm:flex-row gap-4 bg-white rounded-2xl p-5 shadow-md">
               {[
                 { Icon: Shield, title: "Secure payment", sub: "Protected transactions", color: "text-amber-500", bg: "bg-amber-50" },
-                { Icon: Headphones, title: "Customer support", sub: "24/7 assistance", color: "text-blue-500", bg: "bg-blue-50" },
+                { Icon: Headphones, title: "Customer support", sub: "24/7 assistance", color: "text-indigo-500", bg: "bg-indigo-50" },
                 { Icon: Truck, title: "Free delivery", sub: "On orders above Rs. 5000", color: "text-green-500", bg: "bg-green-50" },
               ].map((badge, idx) => (
                 <div key={idx} className="flex items-center gap-3 flex-1">
@@ -159,7 +159,7 @@ export default function Cart() {
           {/* END LEFT */}
 
           {/* RIGHT: Order Summary */}
-          <div className="w-full lg:w-72 bg-white rounded-xl p-5 shadow-sm lg:sticky lg:top-5 flex flex-col gap-4">
+          <div className="w-full lg:w-72 bg-white rounded-2xl p-5 shadow-md lg:sticky lg:top-5 flex flex-col gap-4">
 
             <div>
               <p className="text-sm font-semibold text-gray-700 mb-2">Have a coupon?</p>
@@ -169,9 +169,9 @@ export default function Cart() {
                   placeholder="Add coupon"
                   value={coupon}
                   onChange={(e) => setCoupon(e.target.value)}
-                  className="flex-1 border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:border-blue-400 transition-all"
+                  className="flex-1 border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:border-indigo-400 transition-all"
                 />
-                <button className="px-3 py-2 bg-blue-500 text-white rounded-lg text-sm font-semibold hover:bg-blue-600 transition-all">
+                <button className="px-3 py-2 bg-indigo-500 text-white rounded-xl text-sm font-semibold hover:bg-indigo-600 transition-all">
                   Apply
                 </button>
               </div>
@@ -203,7 +203,7 @@ export default function Cart() {
               <span>Rs. {total.toFixed(0)}</span>
             </div>
 
-            <button className="w-full py-3 bg-blue-500 text-white rounded-lg text-sm font-bold hover:bg-blue-600 transition-all tracking-wide flex items-center justify-center gap-2">
+            <button className="w-full py-3 bg-indigo-500 text-white rounded-lg text-sm font-bold hover:bg-indigo-600 transition-all tracking-wide flex items-center justify-center gap-2">
               <ShoppingCart size={18} />
               Checkout
             </button>
@@ -238,7 +238,7 @@ export default function Cart() {
         {/* END MAIN LAYOUT */}
 
         {/* Saved for Later - full width */}
-        <div className="bg-white rounded-xl p-5 shadow-sm">
+        <div className="bg-white rounded-2xl p-5 shadow-md">
           <h3 className="text-base font-bold text-gray-800 mb-4">Saved for later</h3>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             {savedItems.map((item) => (
@@ -254,7 +254,7 @@ export default function Cart() {
                 <div className="p-2 flex flex-col gap-1 flex-1">
                   <p className="text-sm font-bold text-gray-800">Rs. {item.price.toFixed(0)}</p>
                   <p className="text-xs text-gray-500 leading-snug">{item.title}</p>
-                  <button className="mt-auto text-sm border border-blue-400 text-blue-500 rounded-md py-1.5 hover:bg-blue-500 hover:text-white transition-all font-semibold flex items-center justify-center gap-1">
+                  <button className="mt-auto text-sm border border-indigo-400 text-indigo-500 rounded-md py-1.5 hover:bg-indigo-500 hover:text-white transition-all font-semibold flex items-center justify-center gap-1">
                     <ShoppingCart size={14} />
                     Move to cart
                   </button>
@@ -265,14 +265,14 @@ export default function Cart() {
         </div>
 
         {/* Promo Banner - full width */}
-        <div className="bg-gradient-to-r from-blue-700 to-blue-500 rounded-xl px-7 py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div className="bg-gradient-to-r from-indigo-700 to-indigo-500 rounded-xl px-7 py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
           <div className="text-white">
             <p className="text-base font-bold">Super discount on orders above Rs. 5000</p>
             <p className="text-sm opacity-80 mt-1">Get free delivery + Rs. 500 discount</p>
           </div>
           <button 
             onClick={() => navigate('/products')}
-            className="px-5 py-2.5 bg-white text-blue-700 font-bold text-sm rounded-lg hover:bg-gray-100 transition-all whitespace-nowrap"
+            className="px-5 py-2.5 bg-white text-indigo-700 font-bold text-sm rounded-lg hover:bg-gray-100 transition-all whitespace-nowrap"
           >
             Shop now
           </button>

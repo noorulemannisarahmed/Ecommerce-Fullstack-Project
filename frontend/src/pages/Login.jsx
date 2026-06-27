@@ -26,12 +26,12 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4">
-      <div className="bg-white rounded-2xl shadow-sm p-8 w-full max-w-md">
+    <div className="min-h-screen bg-slate-50 flex items-center justify-center px-4">
+      <div className="bg-white rounded-3xl shadow-lg p-8 w-full max-w-md">
 
         {/* Logo */}
         <div className="flex items-center gap-2 justify-center mb-6">
-          <div className="bg-blue-600 p-1.5 rounded">
+          <div className="bg-indigo-600 p-1.5 rounded-lg">
             <ShoppingCart className="text-white" size={18} />
           </div>
           <span className="font-bold text-lg">Brand</span>
@@ -56,7 +56,7 @@ export default function Login() {
               onChange={handleChange}
               placeholder="you@example.com"
               required
-              className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm outline-none focus:border-blue-400 transition-all"
+              className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm outline-none focus:border-indigo-400 transition-all"
             />
           </div>
 
@@ -69,14 +69,14 @@ export default function Login() {
               onChange={handleChange}
               placeholder="••••••••"
               required
-              className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm outline-none focus:border-blue-400 transition-all"
+              className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm outline-none focus:border-indigo-400 transition-all"
             />
           </div>
 
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-2.5 bg-blue-600 text-white rounded-lg text-sm font-semibold hover:bg-blue-700 transition-all disabled:opacity-60"
+            className="w-full py-2.5 bg-indigo-600 text-white rounded-xl text-sm font-semibold hover:bg-indigo-700 transition-all disabled:opacity-60"
           >
             {loading ? 'Logging in...' : 'Login'}
           </button>
@@ -84,7 +84,7 @@ export default function Login() {
 
         <p className="text-sm text-center text-gray-500 mt-5">
           Don't have an account?{' '}
-          <Link to="/register" className="text-blue-600 font-semibold hover:underline">
+          <Link to="/register" className="text-indigo-600 font-semibold hover:underline">
             Register here
           </Link>
         </p>

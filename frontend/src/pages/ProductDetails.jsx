@@ -65,12 +65,12 @@ const ProductDetails = () => {
   const activePrice = product ? bulkPrices[selectedTier]?.price : 0;
 
   if (loading) return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+    <div className="min-h-screen bg-slate-50 flex items-center justify-center">
       <div className="text-gray-400 text-sm">Loading product...</div>
     </div>
   );
   if (!product) return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+    <div className="min-h-screen bg-slate-50 flex items-center justify-center">
       <div className="text-gray-400 text-sm">Product not found</div>
     </div>
   );
@@ -96,15 +96,15 @@ const mainImages = [product.image];
   ];
 
   return (
-    <div className="bg-gray-100 min-h-screen font-sans text-gray-800 text-sm">
+    <div className="bg-slate-50 min-h-screen font-sans text-gray-800 text-sm">
 
       {/* Breadcrumb */}
       <div className="max-w-6xl mx-auto px-4 py-3 text-xs text-gray-400 flex items-center gap-1">
-        <span className="cursor-pointer hover:text-blue-500" onClick={() => navigate('/')}>Home</span>
+        <span className="cursor-pointer hover:text-indigo-500" onClick={() => navigate('/')}>Home</span>
         <span>›</span>
-        <span className="cursor-pointer hover:text-blue-500">Clothings</span>
+        <span className="cursor-pointer hover:text-indigo-500">Clothings</span>
         <span>›</span>
-        <span className="cursor-pointer hover:text-blue-500">Men's wear</span>
+        <span className="cursor-pointer hover:text-indigo-500">Men's wear</span>
         <span>›</span>
         <span className="text-gray-500">Summer clothing</span>
       </div>
@@ -128,7 +128,7 @@ const mainImages = [product.image];
                   key={i}
                   onClick={() => setSelectedImage(i)}
                   className={`w-12 h-12 rounded border-2 overflow-hidden cursor-pointer flex-shrink-0 transition-all ${
-                    i === selectedImage ? "border-blue-500" : "border-gray-200 hover:border-gray-400"
+                    i === selectedImage ? "border-indigo-500" : "border-gray-200 hover:border-gray-400"
                   }`}
                 >
                   <img src={thumb} alt="" className="w-full h-full object-cover" />
@@ -165,7 +165,7 @@ const mainImages = [product.image];
               <span className="text-gray-600 font-medium">9.3</span>
               <span className="text-gray-300">•</span>
               <MessageSquare size={12} className="text-gray-400" />
-              <span className="text-blue-500 cursor-pointer">32 reviews</span>
+              <span className="text-indigo-500 cursor-pointer">32 reviews</span>
               <span className="text-gray-300">•</span>
               <Award size={12} className="text-gray-400" />
               <span>154 sold</span>
@@ -231,7 +231,7 @@ const mainImages = [product.image];
               <button
                 onClick={handleAddToCart}
                 disabled={product.stock === 0}
-                className={`flex-1 py-2.5 rounded-lg font-semibold text-sm text-white flex items-center justify-center gap-2 transition-all duration-300 disabled:bg-gray-300 ${added ? "bg-green-500 hover:bg-green-500" : "bg-blue-600 hover:bg-blue-700"}`}
+                className={`flex-1 py-2.5 rounded-lg font-semibold text-sm text-white flex items-center justify-center gap-2 transition-all duration-300 disabled:bg-gray-300 ${added ? "bg-green-500 hover:bg-green-500" : "bg-indigo-600 hover:bg-indigo-700"}`}
               >
                 {added ? (
                   <><span>✔</span> Added!</>
@@ -246,7 +246,7 @@ const mainImages = [product.image];
           <div className="w-full lg:w-48 flex-shrink-0">
             <div className="border border-gray-200 rounded-lg p-4 mb-3">
               <div className="flex items-center gap-2 mb-3">
-                <div className="w-9 h-9 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 font-bold text-sm flex-shrink-0">R</div>
+                <div className="w-9 h-9 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-700 font-bold text-sm flex-shrink-0">R</div>
                 <div>
                   <div className="text-xs font-semibold text-gray-800">Supplier</div>
                   <div className="text-xs text-gray-400">Guanjoi Trading LLC</div>
@@ -263,14 +263,14 @@ const mainImages = [product.image];
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6b7280" strokeWidth="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
                 Worldwide shipping
               </div>
-              <button className="w-full py-2 bg-blue-600 text-white rounded-md text-xs font-semibold mb-2 hover:bg-blue-700 transition-all">
+              <button className="w-full py-2 bg-indigo-600 text-white rounded-md text-xs font-semibold mb-2 hover:bg-indigo-700 transition-all">
                 Send inquiry
               </button>
-              <button className="w-full py-2 bg-white text-blue-600 border border-blue-500 rounded-md text-xs font-semibold hover:bg-blue-50 transition-all">
+              <button className="w-full py-2 bg-white text-indigo-600 border border-indigo-500 rounded-md text-xs font-semibold hover:bg-indigo-50 transition-all">
                 Seller's profile
               </button>
             </div>
-            <button className="w-full py-2 bg-white text-blue-500 border border-gray-200 rounded-md text-xs flex items-center justify-center gap-1.5 hover:bg-red-50 hover:text-red-400 hover:border-red-200 transition-all">
+            <button className="w-full py-2 bg-white text-indigo-500 border border-gray-200 rounded-md text-xs flex items-center justify-center gap-1.5 hover:bg-red-50 hover:text-red-400 hover:border-red-200 transition-all">
               <Heart size={13} /> Save for later
             </button>
           </div>
@@ -292,7 +292,7 @@ const mainImages = [product.image];
                   onClick={() => setActiveTab(tab)}
                   className={`px-5 py-3 text-xs font-medium capitalize transition-all border-b-2 -mb-px ${
                     activeTab === tab
-                      ? "border-blue-500 text-blue-600 font-semibold"
+                      ? "border-indigo-500 text-indigo-600 font-semibold"
                       : "border-transparent text-gray-400 hover:text-gray-600"
                   }`}
                 >
@@ -354,8 +354,8 @@ const mainImages = [product.image];
                 <div key={i} className="flex gap-2 cursor-pointer group">
                   <img src={item.img} alt="" className="w-14 h-14 object-cover rounded border border-gray-100 flex-shrink-0" />
                   <div>
-                    <div className="text-xs text-gray-600 leading-snug line-clamp-2 group-hover:text-blue-500 transition-colors">{item.name}</div>
-                    <div className="text-xs text-blue-500 font-medium mt-1">{item.price}</div>
+                    <div className="text-xs text-gray-600 leading-snug line-clamp-2 group-hover:text-indigo-500 transition-colors">{item.name}</div>
+                    <div className="text-xs text-indigo-500 font-medium mt-1">{item.price}</div>
                   </div>
                 </div>
               ))}
@@ -367,7 +367,7 @@ const mainImages = [product.image];
 
       {/* ── PROMO BANNER ── */}
       <div className="max-w-6xl mx-auto px-4 mb-4">
-        <div className="bg-blue-600 rounded-lg px-8 py-5 flex items-center justify-between relative overflow-hidden">
+        <div className="bg-gradient-to-r from-indigo-700 to-violet-600 rounded-xl px-8 py-5 flex items-center justify-between relative overflow-hidden">
           <div
             className="absolute right-32 top-0 bottom-0 w-40 opacity-20"
             style={{
@@ -376,7 +376,7 @@ const mainImages = [product.image];
           />
           <div>
             <div className="text-white font-bold text-base mb-0.5">Super discount on more than 100 USD</div>
-            <div className="text-blue-200 text-xs">Have you ever finally just write dummy info</div>
+            <div className="text-indigo-200 text-xs">Have you ever finally just write dummy info</div>
           </div>
           <button className="bg-orange-400 hover:bg-orange-500 text-white font-bold text-sm px-5 py-2.5 rounded-lg transition-all whitespace-nowrap z-10">
             Shop now

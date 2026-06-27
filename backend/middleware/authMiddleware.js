@@ -1,7 +1,6 @@
 import jwt from 'jsonwebtoken';
 import User from '../models/User.js';
 
-// ── Logged-in user check ──────────────────────────────────────
 export const protect = async (req, res, next) => {
   try {
     const authHeader = req.headers.authorization;
@@ -25,7 +24,6 @@ export const protect = async (req, res, next) => {
   }
 };
 
-// ── Admin only ────────────────────────────────────────────────
 export const adminOnly = (req, res, next) => {
   if (req.user && req.user.role === 'admin') {
     return next();

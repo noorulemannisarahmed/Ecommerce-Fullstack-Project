@@ -71,12 +71,12 @@ function ProductCard({ product, isListView, onProductClick }) {
           </div>
           <button
             onClick={() => onProductClick(product._id)}
-            className="text-xs text-blue-600 font-medium inline-block hover:underline"
+            className="text-xs text-indigo-600 font-medium inline-block hover:underline"
           >
             View details
           </button>
         </div>
-        <Heart className="text-blue-500 hover:text-red-600 cursor-pointer flex-shrink-0 mt-1" size={24} />
+        <Heart className="text-indigo-500 hover:text-red-600 cursor-pointer flex-shrink-0 mt-1" size={24} />
       </div>
     );
   }
@@ -85,7 +85,7 @@ function ProductCard({ product, isListView, onProductClick }) {
     <div className="border border-gray-200 rounded-lg overflow-hidden bg-white hover:shadow-md transition-shadow cursor-pointer" onClick={() => onProductClick(product._id)}>
       <div className="relative">
         <img src={product.image} alt={product.name} className="w-full h-32 sm:h-48 lg:h-64 object-cover" />
-        <Heart className="absolute top-2 right-2 sm:top-3 sm:right-3 text-blue-500 hover:text-red-600 cursor-pointer bg-white rounded-full p-1.5 sm:p-2 shadow-md" size={40} />
+        <Heart className="absolute top-2 right-2 sm:top-3 sm:right-3 text-indigo-500 hover:text-red-600 cursor-pointer bg-white rounded-full p-1.5 sm:p-2 shadow-md" size={40} />
       </div>
       <div className="p-2 sm:p-4">
         <div className="flex gap-2 mb-2">
@@ -155,7 +155,7 @@ export default function ProductListing() {
   };
 
   return (
-    <div className="bg-gray-50 min-h-screen text-gray-900 font-sans">
+    <div className="bg-slate-50 min-h-screen text-gray-900 font-sans">
       {showFilters && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 z-30 lg:hidden"
@@ -181,7 +181,7 @@ export default function ProductListing() {
                 <ChevronDown size={16} />
               </div>
               {categories.map(cat => (
-                <div key={cat} className="text-xs text-gray-600 py-2 hover:text-blue-600 cursor-pointer">
+                <div key={cat} className="text-xs text-gray-600 py-2 hover:text-indigo-600 cursor-pointer">
                   {cat}
                 </div>
               ))}
@@ -195,11 +195,11 @@ export default function ProductListing() {
               </div>
               {brands.map(brand => (
                 <label key={brand.name} className="flex items-center gap-2 py-2 cursor-pointer">
-                  <input type="checkbox" defaultChecked={brand.checked} className="w-4 h-4 text-blue-600 accent-blue-600" />
+                  <input type="checkbox" defaultChecked={brand.checked} className="w-4 h-4 text-indigo-600 accent-blue-600" />
                   <span className="text-xs text-gray-600">{brand.name}</span>
                 </label>
               ))}
-              <div className="text-xs text-blue-600 font-medium mt-2 cursor-pointer">See all</div>
+              <div className="text-xs text-indigo-600 font-medium mt-2 cursor-pointer">See all</div>
             </div>
 
             {/* Features */}
@@ -210,7 +210,7 @@ export default function ProductListing() {
               </div>
               {features.map(feature => (
                 <label key={feature.name} className="flex items-center gap-2 py-2 cursor-pointer">
-                  <input type="checkbox" defaultChecked={feature.checked} className="w-4 h-4 text-blue-600 accent-blue-600" />
+                  <input type="checkbox" defaultChecked={feature.checked} className="w-4 h-4 text-indigo-600 accent-blue-600" />
                   <span className="text-xs text-gray-600">{feature.name}</span>
                 </label>
               ))}
@@ -240,7 +240,7 @@ export default function ProductListing() {
               </div>
               {conditions.map(cond => (
                 <label key={cond.name} className="flex items-center gap-2 py-2 cursor-pointer">
-                  <input type="radio" name="condition" defaultChecked={cond.checked} className="w-4 h-4 text-blue-600 accent-blue-600" />
+                  <input type="radio" name="condition" defaultChecked={cond.checked} className="w-4 h-4 text-indigo-600 accent-blue-600" />
                   <span className="text-xs text-gray-600">{cond.name}</span>
                 </label>
               ))}
@@ -254,7 +254,7 @@ export default function ProductListing() {
               </div>
               {[5, 4, 3, 2].map(stars => (
                 <label key={stars} className="flex items-center gap-2 py-2 cursor-pointer">
-                  <input type="checkbox" className="w-4 h-4 text-blue-600 accent-blue-600" />
+                  <input type="checkbox" className="w-4 h-4 text-indigo-600 accent-blue-600" />
                   <div className="flex gap-0.5">
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} size={12} className={i < stars ? "fill-orange-400 text-orange-400" : "text-gray-300"} />
@@ -288,12 +288,12 @@ export default function ProductListing() {
                 {allFilters.map(filter => (
                   <div
                     key={filter}
-                    className="border border-blue-500 text-blue-600 rounded-full px-2 sm:px-3 py-1 text-xs flex items-center gap-2"
+                    className="border border-indigo-400 text-indigo-600 bg-indigo-50 rounded-full px-2 sm:px-3 py-1 text-xs flex items-center gap-2"
                   >
                     {filter}
                     <X
                       size={12}
-                      className="cursor-pointer hover:text-blue-700"
+                      className="cursor-pointer hover:text-indigo-700"
                       onClick={() => {
                         if (selectedFilters.brands.includes(filter)) removeFilter("brands", filter);
                         else if (selectedFilters.features.includes(filter)) removeFilter("features", filter);
@@ -302,7 +302,7 @@ export default function ProductListing() {
                     />
                   </div>
                 ))}
-                <button onClick={clearAllFilters} className="text-blue-600 text-xs font-medium hover:underline">
+                <button onClick={clearAllFilters} className="text-indigo-600 text-xs font-medium hover:underline">
                   Clear all
                 </button>
               </div>
@@ -340,7 +340,7 @@ export default function ProductListing() {
               <p className="text-xs text-gray-500 mb-5">Try different keywords or check your spelling</p>
               <button
                 onClick={() => navigate('/products')}
-                className="bg-blue-600 hover:bg-blue-700 text-white text-xs font-medium px-5 py-2.5 rounded-lg transition-all"
+                className="bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-medium px-5 py-2.5 rounded-lg transition-all"
               >
                 Clear search & browse all
               </button>
@@ -372,7 +372,7 @@ export default function ProductListing() {
                   key={page}
                   onClick={() => setCurrentPage(page)}
                   className={`px-2 sm:px-3 py-1 sm:py-2 rounded text-xs ${currentPage === page
-                    ? "bg-blue-600 text-white"
+                    ? "bg-indigo-600 text-white"
                     : "border border-gray-200 hover:bg-gray-50"
                     }`}
                 >

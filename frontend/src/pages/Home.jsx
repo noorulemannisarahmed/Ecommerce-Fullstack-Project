@@ -110,7 +110,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="bg-gray-50 min-h-screen text-gray-900 font-sans">
+    <div className="bg-slate-50 min-h-screen text-gray-900 font-sans">
       {/* Hero */}
       <section className="max-w-7xl mx-auto px-4 py-4 grid grid-cols-12 gap-4">
         <div className="hidden lg:block col-span-2 bg-white rounded-lg border border-gray-200 text-sm overflow-hidden h-fit">
@@ -118,7 +118,7 @@ export default function Home() {
             <div
               key={c}
               className={`px-4 py-2.5 cursor-pointer text-xs ${i === 0
-                ? "bg-blue-50 text-blue-600 font-medium border-l-2 border-blue-600"
+                ? "bg-indigo-50 text-indigo-600 font-medium border-l-2 border-indigo-600"
                 : "text-gray-700 hover:bg-gray-50"
                 }`}
             >
@@ -127,7 +127,7 @@ export default function Home() {
           ))}
         </div>
 
-        <div className="col-span-12 lg:col-span-7 rounded-lg overflow-hidden relative bg-gradient-to-br from-teal-100 to-emerald-100 min-h-[300px] flex items-start justify-start px-8 pt-10">
+        <div className="col-span-12 lg:col-span-7 rounded-lg overflow-hidden relative bg-gradient-to-br from-indigo-50 to-violet-100 min-h-[300px] flex items-start justify-start px-8 pt-10">
           <div className="z-10 max-w-xs text-left">
             <p className="text-gray-900 font-semibold text-2xl mb-1">Latest trending</p>
             <h1 className="text-3xl font-bold text-gray-900 mb-4">Electronic items</h1>
@@ -154,17 +154,17 @@ export default function Home() {
                 let's get stated
               </p>
             </div>
-            <button className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded py-2 text-sm font-medium mb-2">
+            <button className="w-full bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg py-2 text-sm font-semibold mb-2">
               Join now
             </button>
             <button className="w-full border border-gray-300 rounded py-2 text-sm font-medium hover:bg-gray-50">
               Log in
             </button>
           </div>
-          <div className="bg-orange-500 text-white rounded-lg p-4 text-lg font-medium flex-1 flex items-center">
+          <div className="bg-amber-500 text-white rounded-lg p-4 text-lg font-medium flex-1 flex items-center">
             Get US $10 off with a new supplier
           </div>
-          <div className="bg-cyan-600 text-white rounded-lg p-4 text-lg font-medium flex-1 flex items-center">
+          <div className="bg-teal-600 text-white rounded-lg p-4 text-lg font-medium flex-1 flex items-center">
             Send quotes with supplier preferences
           </div>
         </div>
@@ -226,7 +226,7 @@ export default function Home() {
             <h2 className="text-2xl font-bold mb-3 max-w-sm leading-snug">
               An easy way to send requests to all suppliers
             </h2>
-            <p className="text-sm text-blue-100 max-w-sm">
+            <p className="text-sm text-indigo-100 max-w-sm">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
             </p>
           </div>
@@ -235,22 +235,22 @@ export default function Home() {
               <h3 className="font-semibold text-sm mb-3">Send quote to suppliers</h3>
               <input
                 placeholder="What item you need?"
-                className="w-full border border-gray-200 rounded px-3 py-2 text-xs mb-2 outline-none focus:border-blue-500"
+                className="w-full border border-gray-200 rounded px-3 py-2 text-xs mb-2 outline-none focus:border-indigo-500"
               />
               <textarea
                 placeholder="Type more details"
-                className="w-full border border-gray-200 rounded px-3 py-2 text-xs mb-2 h-16 resize-none outline-none focus:border-blue-500"
+                className="w-full border border-gray-200 rounded px-3 py-2 text-xs mb-2 h-16 resize-none outline-none focus:border-indigo-500"
               />
               <div className="flex gap-2 mb-3">
                 <input
                   placeholder="Quantity"
-                  className="flex-1 border border-gray-200 rounded px-3 py-2 text-xs outline-none focus:border-blue-500"
+                  className="flex-1 border border-gray-200 rounded px-3 py-2 text-xs outline-none focus:border-indigo-500"
                 />
                 <select className="border border-gray-200 rounded px-2 text-xs text-gray-600">
                   <option>Pcs</option>
                 </select>
               </div>
-              <button className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded py-2.5 text-xs font-medium">
+              <button className="w-full bg-indigo-600 hover:bg-indigo-700 text-white rounded py-2.5 text-xs font-medium">
                 Send inquiry
               </button>
             </div>
@@ -285,7 +285,7 @@ export default function Home() {
                 <img src={s.img} alt={s.title} className="absolute inset-0 w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-black/35" />
                 <div className="absolute top-3 right-3 bg-white rounded-full p-2">
-                  <Icon size={16} className="text-blue-600" />
+                  <Icon size={16} className="text-indigo-600" />
                 </div>
                 <p className="absolute bottom-3 left-3 right-3 text-white text-sm font-medium leading-snug">
                   {s.title}

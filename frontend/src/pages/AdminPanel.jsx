@@ -130,13 +130,13 @@ export default function AdminPanel() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-slate-50">
       <div className="max-w-6xl mx-auto px-4 py-8">
 
         {/* Header */}
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-3">
-            <div className="bg-blue-600 p-2 rounded-lg">
+            <div className="bg-indigo-600 p-2 rounded-lg">
               <Package className="text-white" size={20} />
             </div>
             <div>
@@ -146,7 +146,7 @@ export default function AdminPanel() {
           </div>
           <button
             onClick={openAdd}
-            className="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700 transition-all"
+            className="flex items-center gap-2 bg-indigo-600 text-white px-4 py-2 rounded-xl text-sm font-semibold hover:bg-indigo-700 transition-all"
           >
             <Plus size={16} /> Add Product
           </button>
@@ -169,7 +169,7 @@ export default function AdminPanel() {
               {/* Desktop Table */}
               <div className="hidden md:block">
                 <table className="w-full text-sm">
-                  <thead className="bg-gray-50 border-b border-gray-200">
+                  <thead className="bg-slate-50 border-b border-slate-200">
                     <tr>
                       <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase">Product</th>
                       <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase">Category</th>
@@ -196,7 +196,7 @@ export default function AdminPanel() {
                         </td>
                         <td className="px-4 py-3">
                           <div className="flex items-center justify-end gap-2">
-                            <button onClick={() => openEdit(p)} className="p-1.5 text-blue-500 hover:bg-blue-50 rounded-lg transition-all">
+                            <button onClick={() => openEdit(p)} className="p-1.5 text-indigo-500 hover:bg-indigo-50 rounded-lg transition-all">
                               <Pencil size={15} />
                             </button>
                             <button onClick={() => setDeleteId(p._id)} className="p-1.5 text-red-400 hover:bg-red-50 rounded-lg transition-all">
@@ -226,7 +226,7 @@ export default function AdminPanel() {
                       </div>
                     </div>
                     <div className="flex gap-1 flex-shrink-0">
-                      <button onClick={() => openEdit(p)} className="p-2 text-blue-500 hover:bg-blue-50 rounded-lg transition-all">
+                      <button onClick={() => openEdit(p)} className="p-2 text-indigo-500 hover:bg-indigo-50 rounded-lg transition-all">
                         <Pencil size={15} />
                       </button>
                       <button onClick={() => setDeleteId(p._id)} className="p-2 text-red-400 hover:bg-red-50 rounded-lg transition-all">
@@ -274,7 +274,7 @@ export default function AdminPanel() {
                     value={form[name]}
                     onChange={handleChange}
                     placeholder={placeholder}
-                    className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:border-blue-400 transition-all"
+                    className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:border-indigo-400 transition-all"
                   />
                 </div>
               ))}
@@ -288,7 +288,7 @@ export default function AdminPanel() {
                     value={form.price}
                     onChange={handleChange}
                     placeholder="4999"
-                    className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:border-blue-400 transition-all"
+                    className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:border-indigo-400 transition-all"
                   />
                 </div>
                 <div className="flex-1">
@@ -299,7 +299,7 @@ export default function AdminPanel() {
                     value={form.stock}
                     onChange={handleChange}
                     placeholder="50"
-                    className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:border-blue-400 transition-all"
+                    className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:border-indigo-400 transition-all"
                   />
                 </div>
               </div>
@@ -317,7 +317,7 @@ export default function AdminPanel() {
                         value={tier.price}
                         onChange={(e) => handleBulkPrice(i, 'price', e.target.value)}
                         placeholder="Price"
-                        className="flex-1 border border-gray-200 rounded-lg px-3 py-1.5 text-sm outline-none focus:border-blue-400"
+                        className="flex-1 border border-gray-200 rounded-lg px-3 py-1.5 text-sm outline-none focus:border-indigo-400"
                       />
                     </div>
                   ))}
@@ -335,7 +335,7 @@ export default function AdminPanel() {
               <button
                 onClick={handleSubmit}
                 disabled={saving}
-                className="flex-1 py-2 bg-blue-600 text-white rounded-lg text-sm font-semibold hover:bg-blue-700 transition-all disabled:opacity-60"
+                className="flex-1 py-2 bg-indigo-600 text-white rounded-xl text-sm font-semibold hover:bg-indigo-700 transition-all disabled:opacity-60"
               >
                 {saving ? 'Saving...' : editingId ? 'Update Product' : 'Add Product'}
               </button>
