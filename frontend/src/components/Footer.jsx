@@ -25,7 +25,7 @@ export default function Footer() {
             <div className="bg-blue-600 p-1.5 rounded">
               <ShoppingCart className="text-white" size={16} />
             </div>
-            <span className="font-bold text-lg">Brand</span>
+            <span className="font-bold text-lg">Amazon</span>
           </div>
           <p className="text-xs text-gray-500 leading-relaxed max-w-[220px] mb-4">
             Best information about the company gies here but now lorem ipsum is

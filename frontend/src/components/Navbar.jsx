@@ -45,7 +45,7 @@ export default function Navbar() {
             <ShoppingCart className="text-white" size={18} />
           </div>
           <Link to="/" className="font-bold text-lg hover:text-blue-600 transition">
-            Brand
+            Amazon
           </Link>
         </div>
 
@@ -76,10 +76,6 @@ export default function Navbar() {
             <div className="flex items-center gap-4 lg:gap-5">
               {/* User name + admin badge */}
               <Link to="/profile" className="hidden sm:flex flex-col items-center gap-1 hover:text-blue-600 transition">
-                <User size={18} className="text-blue-600" />
-                <span className="text-blue-600 font-semibold max-w-[70px] truncate">
-                  {user.name.split(' ')[0]}
-                </span>
                 {isAdmin && (
                   <span className="bg-blue-100 text-blue-600 text-[9px] font-bold px-1.5 rounded-full -mt-1">
                     ADMIN

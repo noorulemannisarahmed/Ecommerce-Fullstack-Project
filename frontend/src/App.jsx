@@ -11,7 +11,6 @@ import Cart from './pages/Cart';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import AdminPanel from './pages/AdminPanel';
-import Profile from './pages/Profile';
 
 const ProtectedRoute = ({ children }) => {
   const { user } = useAuth();
@@ -39,11 +38,6 @@ function App() {
             <Route path="/admin" element={
               <ProtectedRoute>
                 <AdminPanel />
-              </ProtectedRoute>
-            } />
-            <Route path="/profile" element={
-              <ProtectedRoute>
-                <Profile />
               </ProtectedRoute>
             } />
           </Routes>

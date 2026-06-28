@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { ShoppingCart } from 'lucide-react';
+import { ShoppingBag } from 'lucide-react';
 
 export default function Register() {
   const navigate = useNavigate();
@@ -34,29 +34,29 @@ export default function Register() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 flex items-center justify-center px-4">
-      <div className="bg-white rounded-3xl shadow-lg p-8 w-full max-w-md">
+    <div className="min-h-screen flex items-center justify-center px-4 py-8" style={{ background: "#FAFAF8" }}>
+      <div className="bg-white rounded-3xl shadow-sm border border-stone-200 p-8 w-full max-w-md">
 
         {/* Logo */}
         <div className="flex items-center gap-2 justify-center mb-6">
-          <div className="bg-indigo-600 p-1.5 rounded-lg">
-            <ShoppingCart className="text-white" size={18} />
+          <div className="p-2 rounded-xl" style={{ background: "#F59E0B" }}>
+            <ShoppingBag className="text-white" size={18} />
           </div>
-          <span className="font-bold text-lg">Brand</span>
+          <span className="font-black text-lg text-stone-900">Amazon</span>
         </div>
 
-        <h2 className="text-2xl font-bold text-gray-800 text-center mb-1">Create account</h2>
-        <p className="text-sm text-gray-400 text-center mb-6">Join us today</p>
+        <h2 className="text-2xl font-black text-stone-900 text-center mb-1">Create account</h2>
+        <p className="text-sm text-stone-400 text-center mb-6 font-medium">Join us today</p>
 
         {error && (
-          <div className="bg-red-50 border border-red-200 text-red-600 text-sm rounded-lg px-4 py-3 mb-4">
+          <div className="bg-red-50 border border-red-200 text-red-600 text-sm rounded-xl px-4 py-3 mb-4 font-medium">
             {error}
           </div>
         )}
 
-        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4">
           <div>
-            <label className="text-sm font-medium text-gray-700 mb-1 block">Name</label>
+            <label className="text-xs font-bold text-stone-700 mb-1.5 block uppercase tracking-wider">Name</label>
             <input
               type="text"
               name="name"
@@ -64,12 +64,12 @@ export default function Register() {
               onChange={handleChange}
               placeholder="Your name"
               required
-              className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm outline-none focus:border-indigo-400 transition-all"
+              className="w-full border border-stone-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-amber-400 transition-all bg-stone-50 font-medium text-stone-800"
             />
           </div>
 
           <div>
-            <label className="text-sm font-medium text-gray-700 mb-1 block">Email</label>
+            <label className="text-xs font-bold text-stone-700 mb-1.5 block uppercase tracking-wider">Email</label>
             <input
               type="email"
               name="email"
@@ -77,12 +77,12 @@ export default function Register() {
               onChange={handleChange}
               placeholder="you@example.com"
               required
-              className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm outline-none focus:border-indigo-400 transition-all"
+              className="w-full border border-stone-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-amber-400 transition-all bg-stone-50 font-medium text-stone-800"
             />
           </div>
 
           <div>
-            <label className="text-sm font-medium text-gray-700 mb-1 block">Password</label>
+            <label className="text-xs font-bold text-stone-700 mb-1.5 block uppercase tracking-wider">Password</label>
             <input
               type="password"
               name="password"
@@ -90,12 +90,12 @@ export default function Register() {
               onChange={handleChange}
               placeholder="••••••••"
               required
-              className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm outline-none focus:border-indigo-400 transition-all"
+              className="w-full border border-stone-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-amber-400 transition-all bg-stone-50 font-medium text-stone-800"
             />
           </div>
 
           <div>
-            <label className="text-sm font-medium text-gray-700 mb-1 block">Confirm Password</label>
+            <label className="text-xs font-bold text-stone-700 mb-1.5 block uppercase tracking-wider">Confirm Password</label>
             <input
               type="password"
               name="confirm"
@@ -103,22 +103,23 @@ export default function Register() {
               onChange={handleChange}
               placeholder="••••••••"
               required
-              className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm outline-none focus:border-indigo-400 transition-all"
+              className="w-full border border-stone-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-amber-400 transition-all bg-stone-50 font-medium text-stone-800"
             />
           </div>
 
           <button
-            type="submit"
+            onClick={handleSubmit}
             disabled={loading}
-            className="w-full py-2.5 bg-indigo-600 text-white rounded-xl text-sm font-semibold hover:bg-indigo-700 transition-all disabled:opacity-60"
+            className="w-full py-2.5 text-stone-900 rounded-xl text-sm font-black hover:opacity-90 transition-all disabled:opacity-60 mt-1"
+            style={{ background: "#F59E0B" }}
           >
             {loading ? 'Creating account...' : 'Register'}
           </button>
-        </form>
+        </div>
 
-        <p className="text-sm text-center text-gray-500 mt-5">
+        <p className="text-sm text-center text-stone-400 mt-5 font-medium">
           Already have an account?{' '}
-          <Link to="/login" className="text-indigo-600 font-semibold hover:underline">
+          <Link to="/login" className="text-amber-600 font-black hover:underline">
             Log in
           </Link>
         </p>
