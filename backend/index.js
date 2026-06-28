@@ -15,8 +15,7 @@ const app = express();
 app.use(cors({
   origin: [
     'http://localhost:5173',                        // local development
-    'https://internship-frontend.vercel.app',       // ← apna Vercel URL yahan
-    /\.vercel\.app$/,                               // sab Vercel preview URLs
+    'https://ecommerce-fullstack-project-ten.vercel.app/',                               // sab Vercel preview URLs
   ],
   credentials: true,
 }));
